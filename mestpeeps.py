@@ -9,16 +9,20 @@ class EIT:
 		Name: {}
 		Nationality: {}
 		Fun_facts: {}
-		""".format(self.name, self.nationality, self.fun_facts)
+		""".format(self.name, self.nationality, self.fun_facts)                                 #finish solution
 
 
-class fellows:
-	def __init__(self, name, nationality, happiness_level, eat, teach):
+class Fellow:
+	def __init__(self, name, nationality, happiness_level=0):
 		self.name=name
 		self.nationality=nationality
 		self.happiness_level=happiness_level
-		self.eat=eat
-		self.teach=teach
+
+	def eat(self):
+		self.happiness_level += 1
+
+	def teach(self):
+		self.happiness_level -= 1
 
 	def __repr__(self):
 		return """
@@ -34,12 +38,6 @@ class School:
 	def __init__(self,eit, fellow):
 		self.eit=eit
 		self.fellow=fellow
-
-	def new_eit(self,eit):
-		self.eit.append(eit)
-
-	def new_fellow(self,fellow):
-		self.fellow.append(fellow)
 
 
 MEST=School()
